@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Signature Editor</title>
+  <style>
+    .editor, .preview {
+        width: calc(49% - 40px);
+        float: right;
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 5px;
+    }
+    .preview {
+      background-color: #fff;
+    }
+    .signature {
+      font-size: 10pt;
+      font-family: 'Figtree', sans-serif;
+    }
+    .signature img {
+      vertical-align: middle;
+    }
+    .signature a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="editor">
+    <h2>Email Signature Editor</h2>
+    <form id="signatureForm">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Indranil Sen"><br><br>
+      <label for="position">Position:</label><br>
+      <input type="text" id="position" name="position" placeholder="President & Co-founder"><br><br>
+      <label for="phone">Phone:</label><br>
+      <input type="text" id="phone" name="phone" placeholder="+44(0)79007082"><br><br>
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email" placeholder="indranil.sen@ekiva.com"><br><br>
+      <label for="website">Website:</label><br>
+      <input type="text" id="website" name="website" placeholder="www.ekiva.com"><br><br>
+      <label for="address">Address:</label><br>
+      <input type="text" id="address" name="address" placeholder="Blays House, Wick Rd, Englefield Green, Egham TW20 0HJ"><br><br>
+      <div class="buttons">
+        <button type="button" onclick="updateSignature()">Update Signature</button>
+        <button type="button" onclick="copySignature()">Copy Signature</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="preview">
+    <div class="signature" id="signaturePreview">
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="font-size: 10pt; font-family: 'Figtree', sans-serif;">
+        <tbody>
+          <tr>
+            <td style="width:190px;">
+              <p style="font-size: 12pt; font-weight:600; margin:0px;">
+                <strong class="ekes_name">Indranil Sen</strong>
+              </p>
+            </td>
+            <td rowspan="5" style="vertical-align: top;">
+              <img src="https://ekiva.com/wp-content/uploads/2024/07/ezgif-3-0d6bfaa7a5.gif" alt="Company Logo" width="100px">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p style="font-size: 12pt; font-weight:500; margin:0px;" class="ekes_position">President & Co-founder</p>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <table style="margin: 0; padding-top:10px;" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="https://ekiva.com/wp-content/uploads/2024/07/telephone.png" class="icon" alt="Phone" width="16px" style="margin-right: 5px;">
+                    </td>
+                    <td>
+                      <a href="tel:+44079007082" class="ekes_phone">+44(0)79007082</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <table style="margin: 0;" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="https://ekiva.com/wp-content/uploads/2024/07/email.png" class="icon" alt="Email" width="16px" style="margin-right: 5px;">
+                    </td>
+                    <td>
+                      <a href="mailto:indranil.sen@ekiva.com" class="ekes_email">indranil.sen@ekiva.com</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <table style="margin: 0;" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="https://ekiva.com/wp-content/uploads/2024/07/global.png" class="icon" alt="Website" width="16px" style="margin-right: 5px;">
+                    </td>
+                    <td>
+                      <a href="https://www.ekiva.com" class="ekes_website">www.ekiva.com</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <table style="margin: 0;" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="https://ekiva.com/wp-content/uploads/2024/07/location.png" class="icon" alt="Address" width="16px" style="margin-right: 5px;">
+                    </td>
+                    <td>
+                      <p style="margin:0px;" class="ekes_address">Blays House, Wick Rd, Englefield Green, Egham TW20 0HJ</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table style="margin: 0;padding-top:20px;">
+        <tr>
+            <td>Follow us on: </td>
+            <td>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/ekiva-ltd" target="_blank"><img src="https://ekiva.com/wp-content/uploads/2024/07/linked-in.png" alt="Linked-in" width="16px"></a>
+                    <a href="https://www.facebook.com/ekiva.ltd" target="_blank"><img src="https://ekiva.com/wp-content/uploads/2024/07/facebook.png" alt="Facebook" width="16px"></a>
+                    <a href="https://x.com/ekivaltd" target="_blank"><img src="https://ekiva.com/wp-content/uploads/2024/07/twitter.png" alt="Twitter" width="16px"></a>
+                    <a href="https://www.youtube.com/channel/UCWMKt8mpdo-E91hGaiJpIcA" target="_blank"><img src="https://ekiva.com/wp-content/uploads/2024/07/youtube.png" alt="Youtube" width="16px"></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </div>
+  </div>
+
+  <script>
+    function updateSignature() {
+      const name = document.getElementById('name').value || 'Indranil Sen';
+      const position = document.getElementById('position').value || 'President & Co-founder';
+      const phone = document.getElementById('phone').value || '+44(0)79007082';
+      const email = document.getElementById('email').value || 'indranil.sen@ekiva.com';
+      const website = document.getElementById('website').value || 'https://www.ekiva.com';
+      const address = document.getElementById('address').value || 'Blays House, Wick Rd, Englefield Green, Egham TW20 0HJ';
+
+      document.querySelector('.ekes_name').textContent = name;
+      document.querySelector('.ekes_position').textContent = position;
+      document.querySelector('.ekes_phone').textContent = phone;
+      document.querySelector('.ekes_phone').href = `tel:${phone}`;
+      document.querySelector('.ekes_email').textContent = email;
+      document.querySelector('.ekes_email').href = `mailto:${email}`;
+      document.querySelector('.ekes_website').textContent = website;
+      document.querySelector('.ekes_website').href = website;
+      document.querySelector('.ekes_address').textContent = address;
+    }
+
+    function copySignature() {
+      const signature = document.getElementById('signaturePreview').innerHTML;
+      const textarea = document.createElement('textarea');
+      textarea.value = signature;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      alert('Signature copied to clipboard!');
+    }
+  </script>
+</body>
+</html>
